@@ -687,7 +687,7 @@ export default function DiscoverPage () {
     useEffect(() => {
       if (search.length !== 0 ) {
         const searchLower = search.toLowerCase();
-        setFilteredCards(cards.filter(card => card.name.toLowerCase().includes(searchLower)))
+        setFilteredCards(cards.filter(card => card.name.toLowerCase().startsWith(searchLower)))
       }
     }, [search]);
 
