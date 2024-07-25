@@ -43,20 +43,20 @@ const useStore = create(set => ({
   addToCart: (product) => {
     set(state => {
       const updatedCartItems = [...state.cartItems, product];
-      const totalPrice = (state.totalAmount + (product.price * product.quantity));
+      const totalPrice = (state.totalAmount + product.price);
       
-      saveCartToLocalStorage(updatedCartItems, totalPrice.toFixed(2));
+      saveCartToLocalStorage(updatedCartItems, Number(totalPrice).toFixed(2));
       return {
         cartItems: updatedCartItems,
-        totalAmount: totalPrice.toFixed(2), // Round to two decimal
+        totalAmount: Number(totalPrice).toFixed(2), // Round to two decimal
       };
     });
 
   },
   removeFromCart: (productId) => {
     set(state => {
-      const updatedCartItems = state.cartItems.filter(product => product.id !== productId);
-      const removedItem = state.cartItems.find(product => product.id === productId);
+      const updatedCartItems = state.cartItems.filter(product => product._id !== productId);
+      const removedItem = state.cartItems.find(product => product._id === productId);
       const newTotalAmount = state.totalAmount - removedItem?.price || 0;
       
       saveCartToLocalStorage(updatedCartItems,newTotalAmount);

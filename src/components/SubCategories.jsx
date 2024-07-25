@@ -14,7 +14,7 @@ const SubCategories = ({name, categoryCover, subCategories}) => {
       </figure>
       <div className="grid grid-cols-2 gap-x-5 gap-y-16">
           {subCategories.map((item, index)=>(
-            <figure key={index} className='w-full'>
+            <figure key={index} className='w-full h-60 md:h-auto'>
               <img className="w-full h-full max-w-full rounded-lg object-cover" src={item.subCategoryCover} alt={item.subCategoryName}/>
               <figcaption className="mt-2 text-lg text-center text-gray-500">{item.subCategoryName}</figcaption>
             </figure>

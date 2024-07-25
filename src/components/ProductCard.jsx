@@ -7,15 +7,15 @@ const ProductCard = ({productImage, title, price, linkTo, iconTitle}) => {
       {iconTitle ?
         <Link className='cursor-default'>
             <figure className='h-16'>
-                <img className="h-full w-full max-w-full rounded-lg object-contain" src={productImage} alt={title}/>
+                <img className="h-full w-full max-w-full rounded-lg object-contain" loading="lazy" src={productImage} alt={title}/>
             </figure>
             <div className='w-full text-center'>
                 <h3 className="text-lg text-center text-gray-500">{title}</h3>
             </div>
         </Link> :
-        <Link to={`/products/${linkTo}`}>
-            <figure className='h-48'>
-                <img className="h-full w-full max-w-full rounded-lg object-cover" src={productImage} alt={title}/>
+        <Link to={`/products/${linkTo}`} className='flex flex-col justify-between'>
+            <figure className='h-60 md:h-auto'>
+                <img className="h-full w-full max-w-full rounded-lg object-contain" loading="lazy" src={productImage} alt={title}/>
             </figure>
             <div className='w-full text-center'>
                 <h3 className="text-lg text-center text-gray-500">{title}</h3>

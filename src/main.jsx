@@ -11,11 +11,17 @@ import LoginPage from "./routes/login";
 import RegisterPage from "./routes/register";
 import ResetPasswordPage from "./routes/resetPassword";
 import ProductPage from "./routes/product";
+import { fetchData, findProduct } from "./libs/utils";
+import AboutPage from "./routes/about-us";
+import ContactPage from "./routes/contact";
 
 const router = createBrowserRouter([
   {
     element: <Root/>,
     errorElement: <NotFoundPage/>,
+    loader: async ()=> {
+      return fetchData()
+    },
     children: [
       {
         path: "/",
@@ -24,14 +30,28 @@ const router = createBrowserRouter([
       {
         path: "/discover",
         element: <DiscoverPage/>,
+        // loader: async ()=> {
+        //   return fetchData()
+        // }
       },
       {
         path: "/products/:id",
         element: <ProductPage/>,
+        loader: async ({params})=> {
+          return findProduct(params.id)
+        }
       },
       {
         path: "/cart",
         element: <CartShopping/>,
+      },
+      {
+        path: "/about-us",
+        element: <AboutPage/>,
+      },
+      {
+        path: "/contact",
+        element: <ContactPage/>,
       },
       {
         path: "/profile",

@@ -27,9 +27,9 @@ const Footer = () => {
             </article>
         </div>
         <nav className='flex justify-between mb-5'>
-            <Link to={"#"} className="text-bodyL leading-bodyL rounded-[20px] text-titleActive focus:ring-4 p-4 focus:outline-none focus:ring-gray-800" >Sobre nosotros</Link>
-            <Link to={"#"} className="text-bodyL leading-bodyL rounded-[20px] text-titleActive focus:ring-4 p-4 focus:outline-none focus:ring-gray-800" >Contacto</Link>
-            <Link to={"#"} className="text-bodyL leading-bodyL rounded-[20px] text-titleActive focus:ring-4 p-4 focus:outline-none focus:ring-gray-800" >Blog</Link>
+            <Link to={"/about-us"} className="text-bodyL leading-bodyL rounded-[20px] text-titleActive focus:ring-4 p-4 focus:outline-none focus:ring-gray-800" >Sobre nosotros</Link>
+            <Link to={"/contact"} className="text-bodyL leading-bodyL rounded-[20px] text-titleActive focus:ring-4 p-4 focus:outline-none focus:ring-gray-800" >Contacto</Link>
+            <Link to={"/blog"} className="text-bodyL leading-bodyL rounded-[20px] text-titleActive focus:ring-4 p-4 focus:outline-none focus:ring-gray-800" >Blog</Link>
         </nav>
         <div className="inline-flex items-center justify-center w-full">
                 <div className="absolute px-4 -translate-x-1/2 bg-white left-1/2 dark:bg-gray-900">
