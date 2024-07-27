@@ -2,6 +2,7 @@ import React from 'react'
 import { FaYoutube, FaTwitter  } from "react-icons/fa";
 import { AiFillInstagram } from "react-icons/ai";
 import { Link } from 'react-router-dom';
+import Logo from '../assets/Logo.svg'
 
 const Footer = () => {
     const data = new Date()
@@ -9,7 +10,7 @@ const Footer = () => {
   return (
     <div className='flex flex-col gap-2 max-w-[1050px] my-16'>
         <div className='flex justify-center items-center gap-5 w-full mb-5'>
-            <img src={"/Logo.svg"} alt="logo" className="w-40 h-auto"/>
+            <img src={Logo} alt="logo" className="w-40 h-auto"/>
         </div>
         <div className="inline-flex items-center justify-center w-full">
                 <div className="absolute px-4 -translate-x-1/2 bg-white left-1/2 dark:bg-gray-900">

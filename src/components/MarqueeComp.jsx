@@ -49,8 +49,8 @@ const reviews = [
     img: Under,
   },
   {
-    name: "Adidas",
-    img: Adidas,
+    name: "Nike",
+    img: Nike,
   },
 ];
 
@@ -71,7 +71,7 @@ const ReviewCard = ({
         "dark:border-gray-50/[.1] dark:bg-gray-50/[.10] dark:hover:bg-gray-50/[.15]",
       )}
     >
-        <img className="h-full w-full max-w-full rounded-lg object-contain" alt="" src={img} />
+        <img className="h-full w-full max-w-full rounded-lg object-contain" alt={'logo de ' + name} src={img} />
     </figure>
   );
 };
