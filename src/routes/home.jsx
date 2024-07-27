@@ -43,25 +43,25 @@ const HomePage = () => {
         [
           {
             ranking: 1,
-            userImage: "http://res.cloudinary.com/dwuv0l98b/image/upload/v1706217896/samples/man-portrait.jpg",
+            userImage: "https://res.cloudinary.com/dwuv0l98b/image/upload/v1706217896/samples/man-portrait.jpg",
             username: "lexcode",
             totalSales: "99.53"
           },
           {
             ranking: 2,
-            userImage: "http://res.cloudinary.com/dwuv0l98b/image/upload/v1706217896/samples/man-portrait.jpg",
+            userImage: "https://res.cloudinary.com/dwuv0l98b/image/upload/v1706217896/samples/man-portrait.jpg",
             username: "lexcode",
             totalSales: "44.95"
           },
           {
             ranking: 3,
-            userImage: "http://res.cloudinary.com/dwuv0l98b/image/upload/v1706217896/samples/man-portrait.jpg",
+            userImage: "https://res.cloudinary.com/dwuv0l98b/image/upload/v1706217896/samples/man-portrait.jpg",
             username: "lexcode",
             totalSales: "34.00"
           },
           {
             ranking: 4,
-            userImage: "http://res.cloudinary.com/dwuv0l98b/image/upload/v1706217896/samples/man-portrait.jpg",
+            userImage: "https://res.cloudinary.com/dwuv0l98b/image/upload/v1706217896/samples/man-portrait.jpg",
             username: "lexcode",
             totalSales: "89.60"
           }
