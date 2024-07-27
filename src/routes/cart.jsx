@@ -30,13 +30,13 @@ const CartShopping = () => {
     const buildWhatsAppMessage = () => {
         let message = `Hola, mi nombre es ${customerName}, vi tu catálogo por ${customerProvider} y estoy interesado en los siguientes productos:\n\n`;
         cart.forEach((item, index) => {
-            message += `${index + 1}. ${item.name} - $${item.price}\nURL: http://localhost:5173/products/${item._id}\n`;
+            message += `${index + 1}. ${item.name} - $${item.price}\nURL: https://openfashion-web.vercel.app/products/${item._id}\n`;
         });
         message += `\nTotal: $${Number(totalAmount).toFixed(2)}`;
         return encodeURIComponent(message); // Encode the message for the URL
       };
     
-    const urlW = `https://api.whatsapp.com/send?phone=74244100&text=${buildWhatsAppMessage()}`;
+    const urlW = `https://api.whatsapp.com/send?phone=72754543&text=${buildWhatsAppMessage()}`;
 
     useEffect(()=> {
         setCart(cartItems)

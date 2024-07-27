@@ -9,7 +9,7 @@ const Footer = () => {
   return (
     <div className='flex flex-col gap-2 max-w-[1050px] my-16'>
         <div className='flex justify-center items-center gap-5 w-full mb-5'>
-            <img src={"/src/assets/Logo.svg"} alt="logo" className="w-40 h-auto"/>
+            <img src={"/Logo.svg"} alt="logo" className="w-40 h-auto"/>
         </div>
         <div className="inline-flex items-center justify-center w-full">
                 <div className="absolute px-4 -translate-x-1/2 bg-white left-1/2 dark:bg-gray-900">
