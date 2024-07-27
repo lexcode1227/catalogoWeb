@@ -1,11 +1,8 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { API_URL } from '../../config';
 import MainCarousel from "../components/MainCarousel";
-import Categories from "../components/Categories";
 import ProductCard from "../components/ProductCard";
 import { MarqueeDemo } from "../components/MarqueeComp";
-// import useStore from "../store/store";
 import icon1 from "../assets/Sticker1.svg"
 import icon2 from "../assets/Sticker2.svg"
 import icon3 from "../assets/Sticker3.svg"

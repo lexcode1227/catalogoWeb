@@ -5,16 +5,16 @@ import SearchIcon from './SearchIcon';
 const MainCarousel = () => {
   const images = [
     {
-      url: "http://res.cloudinary.com/dwuv0l98b/image/upload/v1706217898/samples/woman-on-a-football-field.jpg"
+      url: "https://res.cloudinary.com/dwuv0l98b/image/upload/v1706217898/samples/woman-on-a-football-field.jpg"
     },
     {
-      url: "http://res.cloudinary.com/dwuv0l98b/image/upload/v1706217896/samples/man-portrait.jpg"
+      url: "https://res.cloudinary.com/dwuv0l98b/image/upload/v1706217896/samples/man-portrait.jpg"
     },
     {
-      url: "http://res.cloudinary.com/dwuv0l98b/image/upload/v1706217895/samples/outdoor-woman.jpg"
+      url: "https://res.cloudinary.com/dwuv0l98b/image/upload/v1706217895/samples/outdoor-woman.jpg"
     },
     {
-      url: "http://res.cloudinary.com/dwuv0l98b/image/upload/v1706217898/samples/woman-on-a-football-field.jpg"
+      url: "https://res.cloudinary.com/dwuv0l98b/image/upload/v1706217898/samples/woman-on-a-football-field.jpg"
     },
   ]
   return (
