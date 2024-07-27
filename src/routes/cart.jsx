@@ -1,38 +1,44 @@
 import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import useStore from '../store/store'
+import { Button, Label, Modal, TextInput } from "flowbite-react";
+import { IoLogoWhatsapp } from "react-icons/io";
 
 const CartShopping = () => {
     const [cart, setCart] = useState([])
+    const [openModal, setOpenModal] = useState(false);
+    const [customerName, setCustomerName] = useState('');
+    const [customerProvider, setCustomerProvider] = useState('');
     const totalAmount = useStore((state) => state.totalAmount)
     const cartItems = useStore((state) => state.cartItems)
     const removeFromCart = useStore((state) => state.removeFromCart)
-    // const products = useStore((state) => state.products)
-    // const categories = useStore((state) => state.categories)
-    // console.log("productos: ", products);
-    // console.log("categ: ", categories);
-
+  
+    function onCloseModal() {
+      setOpenModal(false);
+      setCustomerName('');
+      setCustomerProvider('');
+    }
     const removeProduct = (productId) => {
         removeFromCart(productId)
     }
 
+    const handleSubmit = ()=> {
+        console.log({customerName, customerProvider, cart});
+        onCloseModal()
+    }
+
+    const buildWhatsAppMessage = () => {
+        let message = `Hola, mi nombre es ${customerName}, vi tu catálogo por ${customerProvider} y estoy interesado en los siguientes productos:\n\n`;
+        cart.forEach((item, index) => {
+            message += `${index + 1}. ${item.name} - $${item.price}\nURL: http://localhost:5173/products/${item._id}\n`;
+        });
+        message += `\nTotal: $${Number(totalAmount).toFixed(2)}`;
+        return encodeURIComponent(message); // Encode the message for the URL
+      };
+    
+    const urlW = `https://api.whatsapp.com/send?phone=74244100&text=${buildWhatsAppMessage()}`;
+
     useEffect(()=> {
-        // setCart([
-        //     {
-        //         id: 1,
-        //         image: "https://flowbite.s3.amazonaws.com/docs/gallery/square/image.jpg",
-        //         title: "Crema",
-        //         price: "9.63",
-        //         description: "Lorem ipsum dolor sit amet consectetur adipisicing elit, ducimus totam aliquam sapiente. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sunt eaque vero fugit dolorem, reprehenderit modi." 
-        //     },
-        //     {
-        //         id: 2,
-        //         image: "https://flowbite.s3.amazonaws.com/docs/gallery/square/image-1.jpg",
-        //         title: "Zapatos",
-        //         price: "67.95",
-        //         description: "Lorem ipsum dolor sit amet consectetur adipisicing elit, ducimus totam aliquam sapiente deleniti magnam. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sunt eaque vero fugit dolorem, reprehenderit modi." 
-        //       },
-        // ])
         setCart(cartItems)
     }, [cartItems])
   return (
@@ -93,9 +99,10 @@ const CartShopping = () => {
                         </dl>
                     </div>
                     <div className='flex flex-col gap-4 md:flex-row md:justify-between'>
-                        <Link to={"#"} className="flex w-full md:max-w-60 items-center justify-center rounded-lg bg-blue-700 px-5 py-2.5 text-base font-medium text-white hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300">
+                        <Button disabled={(cart.length === 0) ? true : false} onClick={() => setOpenModal(true)} color={"blue"} className="flex w-full md:max-w-60 items-center justify-center rounded-lg bg-blue-700 px-5 py-2.5 text-base font-medium text-white hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300">
                             Pedir por Whatsapp
-                        </Link>
+                            <IoLogoWhatsapp className='ml-2 size-5'/>
+                        </Button>
                         <div className="flex items-center justify-center gap-2">
                             <span className="text-base font-normal text-gray-500"> or </span>
                             <Link to={"/discover"} title="" className="inline-flex items-center gap-2 text-base font-medium text-blue-700 underline hover:no-underline">
@@ -110,6 +117,41 @@ const CartShopping = () => {
                 </div>
             </div>
         </div>
+        <Modal show={openModal} size="md" onClose={onCloseModal} popup>
+            <Modal.Header />
+            <Modal.Body>
+                <div className="space-y-6">
+                    <h3 className="text-xl font-medium text-gray-900 dark:text-white">Antes de continuar con tu pedido, necesitamos unos datos tuyos</h3>
+                    <div>
+                        <div className="mb-2 block">
+                            <Label htmlFor="customerName" value="Escribe tu nombre y apellido" />
+                        </div>
+                        <TextInput
+                            id="customerName"
+                            placeholder="Allison Decker"
+                            value={customerName}
+                            onChange={(event) => setCustomerName(event.target.value)}
+                            required
+                        />
+                    </div>
+                    <div className="mb-2 block">
+                        <Label htmlFor="seller" value="¿Cómo te enteraste de nosotros? Elige una opción" />
+                    </div>
+                    <select defaultValue={customerProvider} onChange={(e)=> setCustomerProvider(e.target.value)} required id="seller" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
+                        <option value="jorge">Jorge</option>
+                        <option value="vanessa">Vanessa</option>
+                        <option value="claudia">Claudia</option>
+                        <option value="lidia">Lidia</option>
+                        <option value="henry">Henry</option>
+                        <option value="anuncio">Anuncio en Facebook/Instagram</option>
+                        <option value="otro">Otra forma</option>
+                    </select>
+                    <div className="w-full">
+                        <a disabled={(customerName === '' || customerProvider === '') ? true : false} target='blank' href={urlW} onClick={handleSubmit} className="flex w-full md:max-w-60 items-center justify-center rounded-lg bg-blue-700 px-5 py-2.5 text-base font-medium text-white hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300">Ordenar por Whatsapp</a>
+                    </div>
+                </div>
+            </Modal.Body>
+        </Modal>
     </section>
   )
 }

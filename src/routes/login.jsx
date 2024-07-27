@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Alert, Modal } from "flowbite-react";
+import { Modal } from "flowbite-react";
 import { Link, useNavigate } from "react-router-dom";
 // import Cookies from 'js-cookie';
 // import { API_URL } from '../../config';
@@ -26,7 +26,7 @@ export default function LoginPage() {
     };
     const handleRecoverPass = async(e)=> {
         e.preventDefault();
-        Alert("enviando recuperar contra");
+        alert("enviando peticion para recuperar contraseña - en proceso de contruccion - NO FUNCIONA AÚN");
         // try {
         //     const res = await fetch(`${API_URL}/api/auth/forgotPassword`, {
         //         method: 'POST',
@@ -45,9 +45,9 @@ export default function LoginPage() {
         //     console.log(error.message);
         // }
     }
-    const handleSubmit = async (event) => {
-        event.preventDefault();
-        Alert("enviando login");
+    const handleSubmit = async (e) => {
+        e.preventDefault()
+        alert("enviando peticion al login - en proceso de contruccion - NO FUNCIONA AÚN");
         // try {
         //     const res = await fetch(`${API_URL}/api/auth/login`, {
         //         method: 'POST',

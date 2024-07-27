@@ -45,10 +45,10 @@ const useStore = create(set => ({
       const updatedCartItems = [...state.cartItems, product];
       const totalPrice = (state.totalAmount + product.price);
       
-      saveCartToLocalStorage(updatedCartItems, Number(totalPrice).toFixed(2));
+      saveCartToLocalStorage(updatedCartItems, Number(totalPrice));
       return {
         cartItems: updatedCartItems,
-        totalAmount: Number(totalPrice).toFixed(2), // Round to two decimal
+        totalAmount: Number(totalPrice),
       };
     });
 

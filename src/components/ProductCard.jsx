@@ -19,7 +19,7 @@ const ProductCard = ({productImage, title, price, linkTo, iconTitle}) => {
             </figure>
             <div className='w-full text-center'>
                 <h3 className="text-lg text-center text-gray-500">{title}</h3>
-                <h4 className="text-lg font-bold text-center text-gray-500">$ {price}</h4>
+                <h4 className="text-lg font-bold text-center text-gray-500">$ {price.toFixed(2)}</h4>
             </div>
         </Link>
       }

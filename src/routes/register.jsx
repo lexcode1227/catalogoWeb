@@ -1,4 +1,3 @@
-import { Alert } from "flowbite-react";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 // import { API_URL } from '../../config';
@@ -24,7 +23,7 @@ export default function RegisterPage() {
     };
     const handleSubmit = async (event) => {
         event.preventDefault();
-        Alert("enviando login");
+        alert("registrando usuarios - aun en contruccion");
         // try {
         //     const res = await fetch(`${API_URL}/api/auth/register`, {
         //         method: 'POST',

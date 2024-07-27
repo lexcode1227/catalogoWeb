@@ -23,25 +23,7 @@ const ProductPage = () => {
 
     useEffect(()=>{
         setRelatedProducts(products.filter(item => item.subCategory === product.subCategory && item._id !== product._id))
-        // setCarouselImages([
-        //     {
-        //         title: "first carousel image",
-        //         image: "http://res.cloudinary.com/dwuv0l98b/image/upload/v1706217898/samples/woman-on-a-football-field.jpg"
-        //     },
-        //     {
-        //         title: "second carousel image",
-        //         image: "http://res.cloudinary.com/dwuv0l98b/image/upload/v1706217896/samples/man-portrait.jpg"
-        //     },
-        //     {
-        //         title: "third carousel image",
-        //         image: "http://res.cloudinary.com/dwuv0l98b/image/upload/v1706217895/samples/outdoor-woman.jpg"
-        //     },
-        //     {
-        //         title: "fourth carousel image",
-        //         image: "http://res.cloudinary.com/dwuv0l98b/image/upload/v1706217894/samples/look-up.jpg"
-        //     },
-        // ])
-    },[])
+    },[product])
   return (
     <>
         <section className='flex flex-col justify-center relative'>
