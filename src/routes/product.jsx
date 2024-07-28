@@ -26,8 +26,8 @@ const ProductPage = () => {
     },[product])
   return (
     <>
-        <section className='flex flex-col justify-center relative'>
-            <div className="h-96 xl:h-80 2xl:h-96 w-full max-w-[1050px]">
+        <section className='flex flex-col justify-center items-center relative'>
+            <div className="h-96 sm:h-[35rem] lg:h-[40rem] w-full max-w-[710px]">
                 <Carousel slide={false} leftControl={<FaChevronLeft color='black'/>} rightControl={<FaChevronRight color='black'/>} >
                     {product.images.map((item, index)=> (
                         <article key={index}>
@@ -36,8 +36,8 @@ const ProductPage = () => {
                     ))}
                 </Carousel>
             </div>
-            <div className="max-w-screen-xl px-4 mx-auto 2xl:px-0">
-                <div className="lg:grid lg:grid-cols-2 lg:gap-8 xl:gap-16">
+            <div className="max-w-[710px] px-4 mx-auto 2xl:px-0">
+                <div className="lg:grid lg:gap-8 xl:gap-16">
                     <div className="mt-6 sm:mt-8 lg:mt-0">
                         <h1 className="text-xl font-semibold text-gray-900 sm:text-2xl dark:text-white">
                             {product.name}
@@ -74,8 +74,8 @@ const ProductPage = () => {
                 </div>
             </div> 
         </section> 
-        <section className='flex flex-col justify-center my-14'>
-            <div className="flex flex-col justify-between gap-4 max-w-[1050px]">
+        <section className='flex flex-col justify-center items-center my-14'>
+            <div className="flex flex-col justify-between gap-4 max-w-[710px]">
                 <h3 className="text-center text-4xl font-bold">Podrian gustarte</h3>
                 <div className="grid grid-cols-2 gap-5">
                   {relatedProducts.map((item)=> (
