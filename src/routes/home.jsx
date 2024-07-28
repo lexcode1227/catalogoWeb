@@ -17,7 +17,8 @@ const HomePage = () => {
     const [steps, setSteps] = useState([])
     const [creators, setCreators] = useState([])
     const products = useStore((state) => state.products)
-    const categories = useStore((state) => state.categories) 
+    const categories = useStore((state) => state.categories)
+    console.log(products);
 
     useEffect(()=>{
       setNewArrival(products.slice(4,10))
@@ -77,7 +78,7 @@ const HomePage = () => {
               <div className="flex flex-col justify-between items-center gap-4 w-full max-w-[710px]">
                 <h3 className="text-center text-4xl font-bold">Recién ingresadas</h3>
                 <div className="grid grid-cols-2 gap-5">
-                  {newArrival.map((item)=> (
+                  {newArrival?.map((item)=> (
                     <ProductCard key={item._id} title={item.name} productImage={item.images[0]} price={item.price} linkTo={item._id} />
                   ))}
                 </div>
