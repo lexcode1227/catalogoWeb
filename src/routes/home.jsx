@@ -18,7 +18,6 @@ const HomePage = () => {
     const [creators, setCreators] = useState([])
     const products = useStore((state) => state.products)
     const categories = useStore((state) => state.categories)
-    console.log(products);
 
     useEffect(()=>{
       setNewArrival(products.slice(4,10))
