@@ -42,6 +42,7 @@ Para empezar a usar la aplicación, no es necesario crear una cuenta para navega
 ## Screenshots
 
 Comercio electronico creado con react y consumiendo una api creada con express. Visitalo aqui: [Openfashion](https://openfashion-web.vercel.app)
+Para visitar como esta construido el backend de este proyecto, visitalo aquí: [Backend del proyecto](https://github.com/lexcode1227/catalogoWeb-backend)
 ![](https://res.cloudinary.com/dwuv0l98b/image/upload/v1722276435/clpxizdutoek0bjd4xie.webp)
 ![](https://res.cloudinary.com/dwuv0l98b/image/upload/v1722276435/eayy1bir5kyncxghtand.webp)
 ![](https://res.cloudinary.com/dwuv0l98b/image/upload/v1722276434/fumcxkisq0my1vjqwc1w.webp)
