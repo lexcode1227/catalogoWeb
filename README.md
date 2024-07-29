@@ -30,7 +30,7 @@ OpenFashion es una plataforma donde los usuarios pueden explorar, descubrir y co
   - [Tailwind CSS](https://tailwindcss.com/)
   - [Flowbite React](https://flowbite.com/docs/getting-started/react/)
   - [Zustand](https://zustand-demo.pmnd.rs/)
-- **Backend**: [Repo Backend]((https://github.com/lexcode1227/catalogoWeb-backend)
+- **Backend**: [Repo Backend](https://github.com/lexcode1227/catalogoWeb-backend)
   - [Express](https://expressjs.com/es/)
   - [Node](https://nodejs.org/en/)
   - [MongoDB](https://www.mongodb.com/es)
