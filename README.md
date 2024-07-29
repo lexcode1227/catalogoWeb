@@ -24,13 +24,13 @@ OpenFashion es una plataforma donde los usuarios pueden explorar, descubrir y co
 
 ## Tecnologías Utilizadas
 
-- **Frontend**:
+- **Frontend**: [Repo Frontend](https://github.com/lexcode1227/catalogoWeb)
   - [React](https://reactjs.org/)
   - [Vite](https://vitejs.dev/)
   - [Tailwind CSS](https://tailwindcss.com/)
   - [Flowbite React](https://flowbite.com/docs/getting-started/react/)
   - [Zustand](https://zustand-demo.pmnd.rs/)
-- **Backend**:
+- **Backend**: [Repo Backend]((https://github.com/lexcode1227/catalogoWeb-backend)
   - [Express](https://expressjs.com/es/)
   - [Node](https://nodejs.org/en/)
   - [MongoDB](https://www.mongodb.com/es)
@@ -41,7 +41,7 @@ Para empezar a usar la aplicación, no es necesario crear una cuenta para navega
 
 ## Screenshots
 
-Comercio electronico creado con react y consumiendo una api creada con express. Visitalo aqui: [Openfashion](https://openfashion-web.vercel.app) . Para visitar como esta construido el backend de este proyecto, visitalo aquí: [Backend del proyecto](https://github.com/lexcode1227/catalogoWeb-backend)
+Comercio electronico creado con react y consumiendo una api creada con express. Visitalo aqui: [Openfashion](https://openfashion-web.vercel.app)
 ![](https://res.cloudinary.com/dwuv0l98b/image/upload/v1722276435/clpxizdutoek0bjd4xie.webp)
 ![](https://res.cloudinary.com/dwuv0l98b/image/upload/v1722276435/eayy1bir5kyncxghtand.webp)
 ![](https://res.cloudinary.com/dwuv0l98b/image/upload/v1722276434/fumcxkisq0my1vjqwc1w.webp)
