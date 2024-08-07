@@ -8,6 +8,7 @@ import { useLoaderData } from 'react-router-dom';
 import useStore from '../store/store';
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 // import SimpleGallery from '../libs/photoSwipe';
+import { Table } from "flowbite-react";
 
 const ProductPage = () => {
     // const [carouselImages, setCarouselImages] = useState([])
@@ -47,6 +48,26 @@ const ProductPage = () => {
                                 ${product.price.toFixed(2)}
                             </p>
                         </div>
+                        {/* <div className="overflow-x-auto"> */}
+                            <Table className='max-w-full'>
+                                <Table.Head className='text-gray-900 text-title'>
+                                    <Table.HeadCell className='text-title capitalize '>Tallas</Table.HeadCell>
+                                    <Table.HeadCell className='text-title capitalize '>Colores</Table.HeadCell>
+                                    <Table.HeadCell className='text-title capitalize '>Stock</Table.HeadCell>
+                                </Table.Head>
+                                <Table.Body className="divide-y text-gray-900 text-title">
+                                    {product.stockInfo.map((item, index)=> (
+                                        <Table.Row className="bg-white" key={index+item.lenght}>
+                                            <Table.Cell className="whitespace-nowrap font-bold text-gray-900">
+                                                {item.size}
+                                            </Table.Cell>
+                                            <Table.Cell className="whitespace-nowrap font-bold text-gray-900">{item.color}</Table.Cell>
+                                            <Table.Cell className="whitespace-nowrap font-bold text-gray-900">{item.stock}</Table.Cell>
+                                        </Table.Row>
+                                    ))}
+                                </Table.Body>
+                            </Table>
+                        {/* </div> */}
 
                         <div className="mt-6 sm:gap-4 sm:items-center sm:flex sm:mt-8">
                             <button className="w-full text-white mt-4 sm:mt-0 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-title px-5 py-2.5 flex items-center justify-center" onClick={addProductToCart}>
@@ -57,19 +78,10 @@ const ProductPage = () => {
                             </button>
                         </div>
 
-                        <hr className="my-6 md:my-8 border-gray-200 dark:border-gray-800" />
+                        <hr className="my-6 md:my-8 border-gray-200" />
 
-                        <p className="mb-6 text-gray-500 text-title">
-                            Studio quality three mic array for crystal clear calls and voice
-                            recordings. Six-speaker sound system for a remarkably robust and
-                            high-quality audio experience. Up to 256GB of ultrafast SSD storage.
-                        </p>
-
-                        <p className="text-gray-500 text-title">
-                            Two Thunderbolt USB 4 ports and up to two USB 3 ports. Ultrafast
-                            Wi-Fi 6 and Bluetooth 5.0 wireless. Color matched Magic Mouse with
-                            Magic Keyboard or Magic Keyboard with Touch ID.
-                        </p>
+                        <p className="mb-6 text-gray-500 text-title text-justify">{product.description}</p>
+                        {/* <p className="mb-6 text-gray-500 text-title">{product.description.split(".")[0]}</p> */}
                     </div>
                 </div>
             </div> 
