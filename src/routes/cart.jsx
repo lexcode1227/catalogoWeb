@@ -9,9 +9,9 @@ const CartShopping = () => {
     const [openModal, setOpenModal] = useState(false);
     const [customerName, setCustomerName] = useState('');
     const [customerProvider, setCustomerProvider] = useState('');
-    const totalAmount = useStore((state) => state.totalAmount)
     const cartItems = useStore((state) => state.cartItems)
     const removeFromCart = useStore((state) => state.removeFromCart)
+    const cartTotal = () => cartItems.reduce((total, product) => total + product.price, 0);
   
     function onCloseModal() {
       setOpenModal(false);
@@ -32,7 +32,7 @@ const CartShopping = () => {
         cart.forEach((item, index) => {
             message += `${index + 1}. ${item.name} - $${item.price}\nURL: https://openfashion-web.vercel.app/products/${item._id}\n`;
         });
-        message += `\nTotal: $${Number(totalAmount).toFixed(2)}`;
+        message += `\nTotal: $${cartTotal().toFixed(2)}`;
         return encodeURIComponent(message); // Encode the message for the URL
       };
     
@@ -86,7 +86,7 @@ const CartShopping = () => {
                         <div className="space-y-2">
                             <dl className="flex items-center justify-between gap-4">
                                 <dt className="text-base font-normal text-gray-500">Precio total</dt>
-                                <dd className="text-base font-medium text-gray-900">${Number(totalAmount).toFixed(2)}</dd>
+                                <dd className="text-base font-medium text-gray-900">${cartTotal().toFixed(2)}</dd>
                             </dl>
                             <dl className="flex items-center justify-between gap-4">
                                 <dt className="text-base font-normal text-gray-500">Envio</dt>
@@ -95,7 +95,7 @@ const CartShopping = () => {
                         </div>
                             <dl className="flex items-center justify-between gap-4 border-t border-gray-200 pt-2">
                             <dt className="text-base font-bold text-gray-900">Total</dt>
-                            <dd className="text-base font-bold text-gray-900">${Number(totalAmount).toFixed(2)}</dd>
+                            <dd className="text-base font-bold text-gray-900">${cartTotal().toFixed(2)}</dd>
                         </dl>
                     </div>
                     <div className='flex flex-col gap-4 md:flex-row md:justify-between'>

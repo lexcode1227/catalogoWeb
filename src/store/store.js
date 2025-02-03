@@ -1,9 +1,8 @@
 import { create } from 'zustand';
 
 // Method to save in localStorage
-const saveCartToLocalStorage = (cartItems, totalAmount) => {
+const saveCartToLocalStorage = (cartItems) => {
     localStorage.setItem('cart', JSON.stringify(cartItems));
-    localStorage.setItem('total', JSON.stringify(totalAmount));
   }
 
 const useStore = create(set => ({
@@ -21,21 +20,6 @@ const useStore = create(set => ({
 
     return []
   })(),
-  totalAmount: (() => {
-
-    if (typeof window === 'undefined') {
-      return 0
-    }
-
-    const total = localStorage.getItem('total')
-
-    if (total !== null ) {
-      const totalLocalStorage = JSON.parse(total)
-      return Number(totalLocalStorage) 
-    }
-
-    return 0
-  })(),
   products: [],
   categories: [],
 
@@ -43,12 +27,10 @@ const useStore = create(set => ({
   addToCart: (product) => {
     set(state => {
       const updatedCartItems = [...state.cartItems, product];
-      const totalPrice = (state.totalAmount + product.price);
       
-      saveCartToLocalStorage(updatedCartItems, Number(totalPrice));
+      saveCartToLocalStorage(updatedCartItems);
       return {
-        cartItems: updatedCartItems,
-        totalAmount: Number(totalPrice),
+        cartItems: updatedCartItems
       };
     });
 
@@ -56,13 +38,10 @@ const useStore = create(set => ({
   removeFromCart: (productId) => {
     set(state => {
       const updatedCartItems = state.cartItems.filter(product => product._id !== productId);
-      const removedItem = state.cartItems.find(product => product._id === productId);
-      const newTotalAmount = state.totalAmount - removedItem?.price || 0;
       
-      saveCartToLocalStorage(updatedCartItems,newTotalAmount);
+      saveCartToLocalStorage(updatedCartItems);
       return {
-        cartItems: updatedCartItems,
-        totalAmount: newTotalAmount,
+        cartItems: updatedCartItems
       };
     });
 
